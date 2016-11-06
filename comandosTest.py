@@ -2,33 +2,38 @@ from comandos import *
 
 def addTest():
 
-  fileName = "fileAddTest"
-  contenido = "soy el archivo de add test"
+  fileNameUno = "fileAddTest"
+  fileNameDos = "fileAddTestDos"
+  contenido1 = "soy el archivo de add test"
+  contenido2 = "soy el archivo de add test 2"
 
   archivosIniciales = get_all_files()
   numFilesUno = len(archivosIniciales)
 
-  add_file(fileName,contenido)
+  add_file(fileNameUno,contenido1)
+  add_file(fileNameDos,contenido2)
   archivosNuevos = get_all_files()
   numFilesDos = len(archivosNuevos)
  
-  numEsperado = numFilesUno + 1
+  numEsperado = numFilesUno + 2
 
-  assert numEsperado == numFilesDos,"El numero de archivos actual deberia ser igual al numFilesUno mas uno"
+  assert numEsperado == numFilesDos,"El numero de archivos actual deberia ser igual al numFilesUno mas dos"
 
 def deleteTest():
-  fileName = "fileAddTest.txt"
+  fileNameUno = "fileAddTest.txt"
+  fileNameDos = "fileAddTestDos.txt"
 
   archivosActuales = get_all_files()
   numFilesUno = len(archivosActuales)
 
-  remove_file(fileName)
+  remove_file(fileNameUno)
+  remove_file(fileNameDos)
   archivosNuevos  = get_all_files()
   numFilesDos = len(archivosNuevos)
  
-  numEsperado = numFilesUno - 1
+  numEsperado = numFilesUno - 2
 
-  assert numEsperado  == numFilesDos,"El numero de archivos deberia ser igual a numFilesUno menos uno"
+  assert numEsperado  == numFilesDos,"El numero de archivos deberia ser igual a numFilesUno menos dos"
 
 def getAllTest():
    
