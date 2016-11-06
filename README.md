@@ -58,7 +58,7 @@ def get_all_files():
   return filter(None,file_list) 
 
 def add_file(filename,content):
-  add_process = Open(filename+'.txt','a')
+  add_process = open(filename+'.txt','a')
   add_process.write(content+'/n')
   add_process.close()
   return "Se creo el archivo" , 201 
@@ -86,33 +86,38 @@ from comandos import *
 
 def addTest():
 
-  fileName = "fileAddTest"
-  contenido = "soy el archivo de add test"
+  fileNameUno = "fileAddTest"
+  fileNameDos = "fileAddTestDos"
+  contenido1 = "soy el archivo de add test"
+  contenido2 = "soy el archivo de add test 2"
 
   archivosIniciales = get_all_files()
   numFilesUno = len(archivosIniciales)
 
-  add_file(fileName,contenido)
-  archivosNuevos = get_all_files(0)
+  add_file(fileNameUno,contenido1)
+  add_file(fileNameDos,contenido2)
+  archivosNuevos = get_all_files()
   numFilesDos = len(archivosNuevos)
  
-  numEsperado = numFilesUno + 1
+  numEsperado = numFilesUno + 2
 
-  assert numEsperado == numFilesDos,"El numero de archivos actual deberia ser igual al numFilesUno mas uno"
+  assert numEsperado == numFilesDos,"El numero de archivos actual deberia ser igual al numFilesUno mas dos"
 
 def deleteTest():
-  fileName = "fileAddTest.txt"
+  fileNameUno = "fileAddTest.txt"
+  fileNameDos = "fileAddTestDos.txt"
 
   archivosActuales = get_all_files()
   numFilesUno = len(archivosActuales)
 
-  remove_file(fileName)
+  remove_file(fileNameUno)
+  remove_file(fileNameDos)
   archivosNuevos  = get_all_files()
   numFilesDos = len(archivosNuevos)
  
-  numEsperado = numFilesUno - 1
+  numEsperado = numFilesUno - 2
 
-  assert numEsperado  == numFilesDos,"El numero de archivos deberia ser igual a numFilesUno menos uno"
+  assert numEsperado  == numFilesDos,"El numero de archivos deberia ser igual a numFilesUno menos dos"
 
 def getAllTest():
    
@@ -147,10 +152,8 @@ pytest --version
 pytest -q comandosTest.py
 ```
 
-##PANTALLAZOS SOLUCIÓN
-
-**Prueba GET FILES**
-![alt text](https://github.com/dylan9538/parcialUno/blob/master/GET%20FILES.PNG "Prueba GET de /files")
+**Prueba de los test (passed)**
+![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/ejecucionPruebas.PNG "Prueba de passed test")
 
 
 ##CUANDO QUIERA SUBIR ARCHIVOS AL REPOSITORIO EN GITHUB
