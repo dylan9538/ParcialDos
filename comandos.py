@@ -6,7 +6,7 @@ def get_all_files():
   return filter(None,file_list) 
 
 def add_file(filename,content):
-  add_process = Open(filename+'.txt','a')
+  add_process = open(filename+'.txt','a')
   add_process.write(content+'/n')
   add_process.close()
   return "Se creo el archivo" , 201 
