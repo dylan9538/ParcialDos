@@ -41,3 +41,34 @@ Instalo El Flask en el ambiente
 ```
 Pip install Flask
 ```
+
+**4)Creo un directorio para el ejercicio dentro del repositorio clonado**
+```
+$ cd ~/
+$ mkdir -p ejercicios/ejercicioPy
+$ cd ejercicios/ejercicioPy
+```
+**5)Creo el archivo comandos.py que contiene el siguiente código**
+```
+from subprocess import Popen, PIPE
+
+def get_all_files():
+  grep_process = Popen(["ls"], stdout=PIPE, stderr=PIPE)
+  file_list = Popen(["awk","-F","/",'{print $1}'], stdin=grep_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n')
+  return filter(None,file_list)
+
+def add_file(filename,content):
+  add_process = Open(filename+'.txt','a')
+  add_process.write(content+'/n')
+  add_process.close()
+  return "Se creo el archivo" , 201
+
+def remove_file(filename):
+  vip = ["ambientes","los_repositorios","files","files_commands"]
+  if filename in vip:
+    return True
+  else:
+    remove_process = Popen(["rm","-r",filename], stdout=PIPE, stderr=PIPE)
+    remove_process.wait()
+    return False if filename in get_all_files() else True
+ ```
