@@ -136,7 +136,13 @@ def getAllTest():
    assert primeraCantidad == tercerCantidad and primeraCantidad + 3 == segundaCantidad
 
 ```
- 
+
+Para el ADD se agregan dos archivos nuevos y luego comparo la cantidad de archivos luego de agregarlos con la cantidad esperada.
+
+Para el REMOVE se borran los dos archivos agregados anteriormente y se compara la cantidad esperada con la cantidad luego de haberlos eliminado.
+
+Para el GET se añaden archivos se pide la cantidad que quedan, luego se borran y se pide la cantidad, luego se compara las cantidades para verificar que esta trayendo la cantidad correcta.
+
 **7) Para la ejecucion de las pruebas unitarias es necesario el framework de pytest. Entonces se procede a ejecutar los siguientes comandos:**
 ```
 pip install -U pytest
