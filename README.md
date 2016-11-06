@@ -69,6 +69,57 @@ def remove_file(filename):
     return True
   else:
     remove_process = Popen(["rm","-r",filename], stdout=PIPE, stderr=PIPE)
-    remove_process.wait()
+    remove_process.wait()i
     return False if filename in get_all_files() else True
  ```
+ 
+Estos metodos contienen codigo para dar todos los archivos, agregar un archivo y eliminar un archivo. Todos desarrollados en el parcial 1.
+ 
+Ubicado en el repositorio dado en la siguiente URL:
+```
+https://github.com/dylan9538/parcialUno
+```
+
+**6)Creo el archivo comandosTest.py que contiene el siguiente codigo** 
+```
+
+
+```
+ 
+**7) Para la ejecucion de las pruebas unitarias es necesario el framework de pytest. Entonces se procede a ejecutar los siguientes comandos:**
+```
+pip install -U pytest
+```
+
+Luego se procede a ejecutar el comando para verificar la instalacion
+```
+pytest --version
+```
+
+**8) Para la ejecucion de las pruebas ejecutamos el siguiente comando, sobre el archivo comandosTest.py**
+```
+pytest -q comandosTest.py
+```
+
+##PANTALLAZOS SOLUCIÓN
+
+**Prueba GET FILES**
+![alt text](https://github.com/dylan9538/parcialUno/blob/master/GET%20FILES.PNG "Prueba GET de /files")
+
+
+##CUANDO QUIERA SUBIR ARCHIVOS AL REPOSITORIO EN GITHUB
+
+1)Creo el archivo si no existe.
+
+2)Sigo los siguientes comandos:
+Estos comandos los ejecuto donde se encuentra ubicado el archivo a cargar.
+
+```
+git add nombreArchivo
+git commit -m "upload README file"
+git push origin master
+```
+
+
+
+
