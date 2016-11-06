@@ -42,6 +42,8 @@ Instalo El Flask en el ambiente
 Pip install Flask
 ```
 
+##PUNTO PYTEST
+
 **4)Creo un directorio para el ejercicio dentro del repositorio clonado**
 ```
 $ cd ~/
