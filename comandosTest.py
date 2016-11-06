@@ -9,7 +9,7 @@ def addTest():
   numFilesUno = len(archivosIniciales)
 
   add_file(fileName,contenido)
-  archivosNuevos = get_all_files(0)
+  archivosNuevos = get_all_files()
   numFilesDos = len(archivosNuevos)
  
   numEsperado = numFilesUno + 1
