@@ -143,11 +143,11 @@ def test_getAll():
 
 ```
 
-Para el ADD se agregan dos archivos nuevos y luego comparo la cantidad de archivos luego de agregarlos con la cantidad esperada.
+**Para el test_add** se agregan dos archivos nuevos y luego comparo la cantidad de archivos luego de agregarlos con la cantidad esperada.
 
-Para el REMOVE se borran los dos archivos agregados anteriormente y se compara la cantidad esperada con la cantidad luego de haberlos eliminado.
+**Para el test_delete** se borran los dos archivos agregados anteriormente y se compara la cantidad esperada con la cantidad luego de haberlos eliminado.
 
-Para el GET se añaden archivos se pide la cantidad que quedan, luego se borran y se pide la cantidad, luego se compara las cantidades para verificar que esta trayendo la cantidad correcta.
+**Para el test_getAll** se añaden archivos se pide la cantidad que quedan, luego se borran y se pide la cantidad, luego se compara las cantidades para verificar que esta trayendo la cantidad correcta.
 
 **Creamos un archivo llamado uri.py que contenga el siguiente código**
 ```
@@ -211,13 +211,18 @@ pytest -q test_comandos.py
 ```
 
 **Prueba de los test (passed)**
+
+Esta prueba fue hecha con la consola y aprueba que los comandos y los test quedaron bien hechos.
+
 ![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/pytest.PNG "Prueba de passed test")
 
 ## AHORA PRUEBA CON JENKINS DE LOS SERVICIOS
+
 Para esta etapa se hace uso del testproject al cual se le hizo fork en github.
 Se copian y pegan los archivos con el codigo fuente en dicho repositorio para probarlo con jenkins. 
 
 **Modificamos el codigo de test_comandos.py por el siguiente codigo**
+
 ```
 from comandos_para_prueba import *
 
@@ -296,16 +301,20 @@ def test_getAll():
    assert primeraCantidad == tercerCantidad and primeraCantidad + 3 == segundaCantidad
 ```
 
+Este codigo maneja json.
+
+**CONTINUAMOS CON LA CREACION DEL PROYECTO** 
+
 **Se crea un nuevo projecto**
-Iniciamos jenkins
+Iniciamos jenkins con nuestro usuario y password:
+
 ![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/Inicio%20Jenkins.PNG "inicio")
 
 Podemos realizar la instalacion de plugins si es necesario:
 
 ![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/Plugins.PNG "inicio")
 
-Cuando creamos el proyecto lo llamamos testproject y continuamos con las configuraciones dadas en el video dado en la siguiente URL
-
+Cuando creamos el proyecto lo llamamos testproject y continuamos con las configuraciones dadas en el video dado en la siguiente URL:
 https://www.youtube.com/watch?v=Jy6NfzlVAKg
 
 ![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/CrearNuevoProyecto.PNG "creacion")
@@ -321,6 +330,7 @@ https://www.youtube.com/watch?v=Jy6NfzlVAKg
 Luego de esto ya el project esta listo para probarse.
 
 En el menu siguiente del proyecto hacemos click en construir ahora y ejecutamos (Igual por la configuración esta ejecutandose periodicamente).
+
 ![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/Ejecu1.PNG "config")
 
 Obtenemos los resultados de las pruebas con jenkins.
