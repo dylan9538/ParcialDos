@@ -54,7 +54,7 @@ $ cd ~/
 $ mkdir -p ejercicios/ejercicioPy
 $ cd ejercicios/ejercicioPy
 ```
-**5)Creo el archivo comandos.py que contiene el siguiente código**
+**5)Creo el archivo comandos_para_prueba.py que contiene el siguiente código**
 ```
 from subprocess import Popen, PIPE
 
@@ -86,11 +86,11 @@ Ubicado en el repositorio dado en la siguiente URL:
 https://github.com/dylan9538/parcialUno
 ```
 
-**6)Creo el archivo comandosTest.py que contiene el siguiente codigo** 
+**6)Creo el archivo test_comandos.py que contiene el siguiente codigo** 
 ```
-from comandos import *
+from comandos_para_prueba import *
 
-def addTest():
+def test_add():
 
   fileNameUno = "fileAddTest"
   fileNameDos = "fileAddTestDos"
@@ -104,12 +104,12 @@ def addTest():
   add_file(fileNameDos,contenido2)
   archivosNuevos = get_all_files()
   numFilesDos = len(archivosNuevos)
- 
+
   numEsperado = numFilesUno + 2
 
   assert numEsperado == numFilesDos,"El numero de archivos actual deberia ser igual al numFilesUno mas dos"
 
-def deleteTest():
+def test_delete():
   fileNameUno = "fileAddTest.txt"
   fileNameDos = "fileAddTestDos.txt"
 
@@ -120,20 +120,20 @@ def deleteTest():
   remove_file(fileNameDos)
   archivosNuevos  = get_all_files()
   numFilesDos = len(archivosNuevos)
- 
+
   numEsperado = numFilesUno - 2
 
   assert numEsperado  == numFilesDos,"El numero de archivos deberia ser igual a numFilesUno menos dos"
 
-def getAllTest():
-   
+def test_getAll():
+
    primeraCantidad = len(get_all_files());
-   
+
    add_file("fileOne","soy el archivo one");
    add_file("fileTwo","soy el archivo dos");
-   add_file("fileThree,"soy el archivo tres");
+   add_file("fileThree","soy el archivo tres");
    segundaCantidad = len(get_all_files());
-  
+
    remove_file("fileOne.txt");
    remove_file("fileTwo.txt");
    remove_file("fileThree.txt");
