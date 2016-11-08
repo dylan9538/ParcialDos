@@ -5,6 +5,10 @@ Estudiante | Código
 --- | --- | ---
 Dylan Torres | 12103021 
 ****
+##URL 
+
+https://github.com/dylan9538/ParcialDos
+
 ##PASOS PREVIOS PARA DESARROLLAR EL PARCIAL
 
 **1) Iniciamos la maquina con el usuario root:**
