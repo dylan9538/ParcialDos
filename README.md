@@ -303,7 +303,24 @@ def test_getAll():
    assert primeraCantidad == tercerCantidad and primeraCantidad + 3 == segundaCantidad
 ```
 
-Este codigo maneja json.
+Al archivo que tiene las pruebas se le añade el client:
+```
+@pytest.fixture
+def client(request):
+    client = usermgt.app.test_client()
+    return client
+```    
+Se realizan los cambios para los llamados a los metodos add y get. Este codigo maneja json.
+
+Para los métodos post (add or delete):
+```
+client.post('/files', data = json.dumps(jsonU), content_type = 'aplication/json')
+```
+
+Para el método get:
+```
+client.get('/files',follow_redirects=True)
+```
 
 **CONTINUAMOS CON LA CREACION DEL PROYECTO** 
 
