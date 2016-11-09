@@ -353,6 +353,7 @@ En el menu siguiente del proyecto hacemos click en construir ahora y ejecutamos 
 ![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/Ejecu1.PNG "config")
 
 Obtenemos los resultados de las pruebas con jenkins.
+
 ![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/lu.PNG "config")
 
 
