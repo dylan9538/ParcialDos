@@ -354,7 +354,7 @@ En el menu siguiente del proyecto hacemos click en construir ahora y ejecutamos 
 
 Obtenemos los resultados de las pruebas con jenkins.
 
-![alt text] (https://github.com/dylan9538/ParcialDos/blob/master/pruebas1.PNG "config")
+
 
 ##FIN
 
