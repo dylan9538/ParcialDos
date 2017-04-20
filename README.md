@@ -1,9 +1,9 @@
 # PARCIAL 2
 
 ****
-Estudiante | Código
---- | --- | ---
-Dylan Torres | 12103021 
+Estudiante | Dylan Torres 
+
+Código | 12103021 
 ****
 ##URL 
 
